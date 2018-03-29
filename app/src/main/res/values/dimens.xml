@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="smallPadding">8dp</dimen>
+    <dimen name="mediumPadding">16dp</dimen>
+    <dimen name="bigPadding">20dp</dimen>
+
+    <dimen name="headSize">20sp</dimen>
+
+    <dimen name="imageHeight_land">100dp</dimen>
+</resources>

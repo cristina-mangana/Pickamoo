@@ -1,0 +1,38 @@
+<resources>
+    <!-- App Name-->
+    <string name="app_name" translatable="false">Pickamoo</string>
+
+    <!-- MAIN ACTIVITY -->
+    <!-- Welcome message [CHAR LIMIT = NONE]-->
+    <string name="welcome">Welcome</string>
+    <!-- Introduction message [CHAR LIMIT = NONE]-->
+    <string name="intro">It\'s a nice day to discover a new movie.\nWhat do you want to watch
+        today?</string>
+
+    <!-- RADIO BUTTONS [CHAR LIMIT = 15]-->
+    <string name="popular">Popular movies</string>
+    <string name="top_rated">Top Rated</string>
+
+    <!-- DETAIL ACTIVITY -->
+    <!-- Description label [CHAR LIMIT = 20]-->
+    <string name="description_label">Description</string>
+    <!-- Date label [CHAR LIMIT = 20]-->
+    <string name="date_label">Release date:</string>
+    <!-- Synopsis label [CHAR LIMIT = 20]-->
+    <string name="synopsis_label">Synopsis:</string>
+    <!-- Vote average placeholder -->
+    <string name="rating_placeholder" translatable="false">7.9</string>
+
+    <!-- Text to display when there isn't description [CHAR LIMIT = NONE]-->
+    <string name="no_info">No information available</string>
+
+    <!-- Error text [CHAR LIMIT = NONE]-->
+    <string name="error">Oops! It seems that an error has occurred. Please check your Internet
+    connection and come back in a while</string>
+
+    <!-- CONTENT DESCRIPTION -->
+    <!-- Attribution image content description [CHAR LIMIT = NONE]-->
+    <string name="attribution_ct">Powered by The Movie Db</string>
+    <!-- Poster image content description [CHAR LIMIT = NONE]-->
+    <string name="poster_ct">Movie Poster</string>
+</resources>
