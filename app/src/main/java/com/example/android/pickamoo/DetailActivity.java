@@ -9,6 +9,7 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.StyleSpan;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.android.pickamoo.databinding.ActivityDetailBinding;
 import com.squareup.picasso.Picasso;
@@ -21,6 +22,11 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
+
+        if (getIntent() == null && !getIntent().hasExtra("movie")) {
+            Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show();
+            finish();
+        }
 
         final Movie movie = getIntent().getExtras().getParcelable("movie");
 

@@ -1,14 +1,14 @@
 package com.example.android.pickamoo;
 
-import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.Loader;
 import android.databinding.DataBindingUtil;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -75,11 +75,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+        final boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
 
         if (isConnected) {
             // Get a reference to the LoaderManager
-            loaderManager = getLoaderManager();
+            loaderManager = getSupportLoaderManager();
 
             // Initialize the loader
             loaderManager.initLoader(0, null, this);
@@ -94,11 +94,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         mBinding.rgSortOrder.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-                isPopular = checkedId == R.id.rb_popular;
-                mRecyclerView.setVisibility(View.GONE);
-                mBinding.emptyText.setVisibility(View.GONE);
-                mBinding.loadingSpinner.setVisibility(View.VISIBLE);
-                loaderManager.restartLoader(0, null, MainActivity.this);
+                if (!isConnected) {
+                    mBinding.emptyText.setVisibility(View.VISIBLE);
+                } else {
+                    isPopular = checkedId == R.id.rb_popular;
+                    mRecyclerView.setVisibility(View.GONE);
+                    mBinding.emptyText.setVisibility(View.GONE);
+                    mBinding.loadingSpinner.setVisibility(View.VISIBLE);
+                    loaderManager.restartLoader(0, null, MainActivity.this);
+                }
             }
         });
     }
