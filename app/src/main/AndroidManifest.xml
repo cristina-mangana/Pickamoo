@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity" />
+        <provider
+            android:name=".data.MovieProvider"
+            android:authorities="com.example.android.pickamoo"
+            android:exported="false" />
     </application>
 
 </manifest>

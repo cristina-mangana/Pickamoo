@@ -35,10 +35,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="334d5c" />
-                                      <entry key="foregroundImage" value="C:\Users\Cristina\Documents\Estudos\Android\2_AND\App_Pickamoo\ic_launcher\ic_launcher.png" />
-                                      <entry key="generateWebIcon" value="false" />
+                                      <entry key="backgroundColor" value="01d277" />
+                                      <entry key="foregroundImage" value="C:\Users\Cristina\Documents\Estudos\Android\2_AND\App_Pickamoo\ic_launcher\camera - Copia.svg" />
                                       <entry key="legacyIconShape" value="CIRCLE" />
+                                      <entry key="webIconShape" value="CIRCLE" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -57,6 +57,47 @@
                                 </PersistentState>
                               </value>
                             </entry>
+                          </map>
+                        </option>
+                      </PersistentState>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PersistentState>
+          </value>
+        </entry>
+        <entry key="vectorWizard">
+          <value>
+            <PersistentState>
+              <option name="children">
+                <map>
+                  <entry key="vectorAssetStep">
+                    <value>
+                      <PersistentState>
+                        <option name="children">
+                          <map>
+                            <entry key="clipartAsset">
+                              <value>
+                                <PersistentState>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/av/ic_play_circle_filled_black_24dp.xml" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                        <option name="values">
+                          <map>
+                            <entry key="color" value="ffffff" />
+                            <entry key="height" value="72" />
+                            <entry key="outputName" value="ic_play_circle" />
+                            <entry key="overrideSize" value="true" />
+                            <entry key="sourceFile" value="C:\Users\Cristina\Documents\Estudos\Android\2_AND\App_Pickamoo\frame.svg" />
+                            <entry key="width" value="72" />
                           </map>
                         </option>
                       </PersistentState>

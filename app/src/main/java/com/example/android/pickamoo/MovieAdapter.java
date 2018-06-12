@@ -1,6 +1,7 @@
 package com.example.android.pickamoo;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     private final Context mContext;
     private List<Movie> mMovies;
     private static MovieAdapterListener mOnClickListener;
+    private int mWidth, mHeight;
 
     // Handle button click
     public interface MovieAdapterListener {
@@ -49,7 +51,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         public ViewHolder(View view) {
             super(view);
-            moviePoster = (ImageView) view.findViewById(R.id.iv_poster_grid);
+            moviePoster = view.findViewById(R.id.iv_poster_grid);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -60,17 +62,24 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     }
 
     // Create new views (invoked by the layout manager)
+    @NonNull
     @Override
-    public MovieAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MovieAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Create a new view
         View itemView = LayoutInflater.from(mContext)
                 .inflate(R.layout.movie_grid_item, parent, false);
+        // Calculate the image width based on the RecyclerView total width, divided by the column
+        // number and minus the margins
+        mWidth = parent.getWidth() / parent.getResources().getInteger(R.integer.column_number)
+                - (int) parent.getResources().getDimension(R.dimen.smallSeparation) * 4;
+        // Calculate the image height as the width multiplied by the image ratio (1.5)
+        mHeight = mWidth * 3 / 2;
         return new ViewHolder(itemView);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(MovieAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MovieAdapter.ViewHolder holder, int position) {
         Movie currentMovie = mMovies.get(position);
 
         // Get the imageLink to download the poster image
@@ -78,9 +87,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         // Download the image and attach it to the ImageView. If imageLink is null, no image is
         // assigned or is not recognized as such. Then, a default image is assigned.
         if (imageLink != null && imageLink.length() > 0) {
-            Picasso.get().load(imageLink).into(holder.moviePoster);
+            Picasso.get().load(imageLink).resize(mWidth, mHeight).error(R.drawable.img_placeholder)
+                    .into(holder.moviePoster);
         } else {
-            Picasso.get().load(R.drawable.img_placeholder).into(holder.moviePoster);
+            Picasso.get().load(R.drawable.img_placeholder).resize(mWidth, mHeight).into(holder.moviePoster);
         }
     }
 

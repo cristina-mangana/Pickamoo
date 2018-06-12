@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Category titles-->
+    <string-array name="category_titles">
+        <item>@string/popular</item>
+        <item>@string/top_rated</item>
+        <item>@string/favorite</item>
+        <item>@string/action</item>
+        <item>@string/animation</item>
+        <item>@string/comedy</item>
+        <item>@string/drama</item>
+        <item>@string/romance</item>
+        <item>@string/family</item>
+        <item>@string/music</item>
+        <item>@string/sci_fi</item>
+        <item>@string/thriller</item>
+        <item>@string/documentary</item>
+        <item>@string/horror</item>
+        <item>@string/western</item>
+    </string-array>
+
+    <!-- Reviews views ids-->
+    <integer-array name="reviews_ids">
+        <item>@id/review1</item>
+        <item>@id/review2</item>
+        <item>@id/review3</item>
+    </integer-array>
+</resources>

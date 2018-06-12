@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/popular"
+            android:checked="true"
+            android:icon="@drawable/ic_popular_white"
+            android:title="@string/popular" />
+        <item
+            android:id="@+id/top_rated"
+            android:icon="@drawable/ic_star_white"
+            android:title="@string/top_rated" />
+        <item
+            android:id="@+id/favorite"
+            android:icon="@drawable/ic_favorite_white"
+            android:title="@string/favorite" />
+    </group>
+
+    <item android:title="@string/genres_title">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/action"
+                    android:icon="@drawable/ic_action"
+                    android:title="@string/action" />
+                <item
+                    android:id="@+id/animation"
+                    android:icon="@drawable/ic_animation"
+                    android:title="@string/animation" />
+                <item
+                    android:id="@+id/comedy"
+                    android:icon="@drawable/ic_comedy"
+                    android:title="@string/comedy" />
+                <item
+                    android:id="@+id/drama"
+                    android:icon="@drawable/ic_drama"
+                    android:title="@string/drama" />
+                <item
+                    android:id="@+id/romance"
+                    android:icon="@drawable/ic_romance"
+                    android:title="@string/romance" />
+                <item
+                    android:id="@+id/family"
+                    android:icon="@drawable/ic_family"
+                    android:title="@string/family" />
+                <item
+                    android:id="@+id/music"
+                    android:icon="@drawable/ic_music"
+                    android:title="@string/music" />
+                <item
+                    android:id="@+id/sci_fi"
+                    android:icon="@drawable/ic_sci_fi"
+                    android:title="@string/sci_fi" />
+                <item
+                    android:id="@+id/thriller"
+                    android:icon="@drawable/ic_thriller"
+                    android:title="@string/thriller" />
+                <item
+                    android:id="@+id/documentary"
+                    android:icon="@drawable/ic_documentary"
+                    android:title="@string/documentary" />
+                <item
+                    android:id="@+id/horror"
+                    android:icon="@drawable/ic_horror"
+                    android:title="@string/horror" />
+                <item
+                    android:id="@+id/western"
+                    android:icon="@drawable/ic_western"
+                    android:title="@string/western" />
+            </group>
+        </menu>
+    </item>
+</menu>

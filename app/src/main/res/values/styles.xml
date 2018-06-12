@@ -8,4 +8,36 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Style for labels in detail activity -->
+    <style name="label_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primaryDarkText</item>
+        <item name="android:textSize">@dimen/bodySize</item>
+    </style>
+
+    <!-- Style for body texts in detail activity -->
+    <style name="body_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/smallSeparation</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textSize">@dimen/bodySize</item>
+        <item name="android:textColor">@color/secondaryDarkText</item>
+    </style>
+
+    <!-- Style for headings in detail activity -->
+    <style name="heading_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/mediumPadding</item>
+        <item name="android:layout_marginTop">@dimen/bigPadding</item>
+        <item name="android:drawableLeft">@drawable/title_drawable</item>
+        <item name="android:drawableStart">@drawable/title_drawable</item>
+        <item name="android:drawablePadding">@dimen/smallSeparation</item>
+        <item name="android:textColor">@color/primaryDarkText</item>
+        <item name="android:textSize">@dimen/titleSize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

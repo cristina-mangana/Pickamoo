@@ -1,101 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.android.pickamoo.MainActivity">
 
-    <LinearLayout
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginEnd="@dimen/smallPadding"
-        android:layout_marginLeft="@dimen/smallPadding"
-        android:layout_marginRight="@dimen/smallPadding"
-        android:layout_marginStart="@dimen/smallPadding"
-        android:background="@drawable/main_background"
-        android:orientation="vertical">
+        android:background="@color/background">
 
-        <TextView
-            style="@style/TextAppearance.AppCompat.Display2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/smallPadding"
-            android:layout_marginTop="@dimen/bigPadding"
-            android:text="@string/welcome"
-            android:textColor="@color/primaryDarkText" />
-
-        <TextView
-            style="@style/TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/smallPadding"
-            android:gravity="center_horizontal"
-            android:text="@string/intro"
-            android:textColor="@color/secondaryDarkText" />
-
-        <RadioGroup
-            android:id="@+id/rg_sort_order"
+        <!-- The main content view -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:background="@drawable/background_2"
+            android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/rb_popular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/mediumPadding"
-                android:layout_marginRight="@dimen/mediumPadding"
-                android:checked="true"
-                android:text="@string/popular" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <RadioButton
-                android:id="@+id/rb_top_rated"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/top_rated" />
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
-        </RadioGroup>
+                <TextView
+                    android:id="@+id/head_tv"
+                    style="@style/TextAppearance.AppCompat.Display2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/smallPadding"
+                    android:layout_marginEnd="@dimen/iconPadding"
+                    android:layout_marginLeft="@dimen/iconPadding"
+                    android:layout_marginRight="@dimen/iconPadding"
+                    android:layout_marginStart="@dimen/iconPadding"
+                    android:layout_marginTop="@dimen/bigPadding"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/welcome"
+                    android:textColor="@color/primaryLightText"
+                    app:autoSizeTextType="uniform" />
+            </RelativeLayout>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/movies_grid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
-
-            <!-- Empty view is only visible when the list has no items (network failure)-->
             <TextView
-                android:id="@+id/empty_text"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/error"
-                android:visibility="gone" />
-
-            <!-- Loading indicator is only shown before the first load -->
-            <ProgressBar
-                android:id="@+id/loading_spinner"
-                style="@style/Widget.AppCompat.ProgressBar"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/smallPadding"
+                android:gravity="center_horizontal"
+                android:text="@string/intro"
+                android:textColor="@color/secondaryLightText" />
 
-        </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingEnd="@dimen/smallPadding"
+                android:paddingLeft="@dimen/smallPadding"
+                android:paddingRight="@dimen/smallPadding"
+                android:paddingStart="@dimen/smallPadding"
+                android:paddingTop="@dimen/smallPadding">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|bottom"
-            android:layout_margin="@dimen/smallPadding"
-            android:contentDescription="@string/attribution_ct"
-            android:src="@drawable/powered_by_green" />
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
 
-    </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/movies_grid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal" />
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+                <!-- Empty view is only visible when the list has no items (network failure)-->
+                <TextView
+                    android:id="@+id/empty_text"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/primaryLightText"
+                    android:visibility="gone" />
+
+                <!-- Loading indicator is only shown before the load -->
+                <ProgressBar
+                    android:id="@+id/loading_spinner"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!-- The navigation drawer -->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/left_drawer"
+            android:layout_width="@dimen/nav_drawer_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/header_layout"
+            app:itemIconTint="@color/menu_item_color"
+            app:menu="@menu/navigation_menu" />
+    </android.support.v4.widget.DrawerLayout>
 </layout>

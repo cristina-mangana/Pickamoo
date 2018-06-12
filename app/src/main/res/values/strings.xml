@@ -2,6 +2,9 @@
     <!-- App Name-->
     <string name="app_name" translatable="false">Pickamoo</string>
 
+    <!-- Language code to perform network request [CHAR LIMIT = NONE]-->
+    <string name="language_code">en</string>
+
     <!-- MAIN ACTIVITY -->
     <!-- Welcome message [CHAR LIMIT = NONE]-->
     <string name="welcome">Welcome</string>
@@ -9,30 +12,129 @@
     <string name="intro">It\'s a nice day to discover a new movie.\nWhat do you want to watch
         today?</string>
 
-    <!-- RADIO BUTTONS [CHAR LIMIT = 15]-->
-    <string name="popular">Popular movies</string>
+    <!-- Error text [CHAR LIMIT = NONE]-->
+    <string name="error">Oops! It seems that an error has occurred. Please check your Internet
+    connection and come back in a while</string>
+    <!-- Empty text [CHAR LIMIT = NONE]-->
+    <string name="empty">There are no movies in Your Favorites yet</string>
+
+    <!-- OPTIONS TO POPULATE IN THE NAVIGATION DRAWER [CHAR LIMIT = 15]-->
+    <string name="popular">Most Popular</string>
     <string name="top_rated">Top Rated</string>
+    <string name="favorite">Your Favorites</string>
+    <string name="action">Action</string>
+    <string name="animation">Animation</string>
+    <string name="comedy">Comedy</string>
+    <string name="drama">Drama</string>
+    <string name="romance">Romance</string>
+    <string name="family">Family</string>
+    <string name="music">Music</string>
+    <string name="sci_fi">Science Fiction</string>
+    <string name="thriller">Thriller</string>
+    <string name="documentary">Documentary</string>
+    <string name="horror">Horror</string>
+    <string name="western">Western</string>
+    <string name="genres_title">Genres</string>
+
+    <string name="drawer_open">Drawer is open</string>
+    <string name="drawer_close">Drawer is close</string>
 
     <!-- DETAIL ACTIVITY -->
     <!-- Description label [CHAR LIMIT = 20]-->
     <string name="description_label">Description</string>
+    <!-- Rating max-->
+    <string name="rating_label" translatable="false">/10</string>
     <!-- Date label [CHAR LIMIT = 20]-->
-    <string name="date_label">Release date:</string>
+    <string name="date_label">Year:</string>
+    <!-- Production country label [CHAR LIMIT = 20]-->
+    <string name="country_label">Country:</string>
+    <!-- Genre label [CHAR LIMIT = 20]-->
+    <string name="genre_label">Genre:</string>
+    <!-- Direction label [CHAR LIMIT = 20]-->
+    <string name="directed_label">Directed by:</string>
     <!-- Synopsis label [CHAR LIMIT = 20]-->
     <string name="synopsis_label">Synopsis:</string>
-    <!-- Vote average placeholder -->
-    <string name="rating_placeholder" translatable="false">7.9</string>
-
+    <!-- Photos label [CHAR LIMIT = 20]-->
+    <string name="photos_label">Photos</string>
+    <!-- Cast label [CHAR LIMIT = 20]-->
+    <string name="cast_label">The cast</string>
+    <!-- Trailers label [CHAR LIMIT = 20]-->
+    <string name="trailers_label">Trailers</string>
+    <!-- Reviews label [CHAR LIMIT = 20]-->
+    <string name="reviews_label">Reviews</string>
+    <!-- Recommendations label [CHAR LIMIT = 20]-->
+    <string name="recommendations_label">Recommended movies</string>
+    <!-- Review author label [CHAR LIMIT = 15]-->
+    <string name="author_label"><xliff.g example="cris_84" id="author_name">%s</xliff.g>
+        says:</string>
+    <!-- Review text -->
+    <string name="review_text" translatable="false">\"
+        <xliff.g example="blablabla" id="review">%s</xliff.g>\"</string>
+    <!-- Reviews expandable button [CHAR LIMIT = 15]-->
+    <string name="view_more">View more</string>
     <!-- Text to display when there isn't description [CHAR LIMIT = NONE]-->
     <string name="no_info">No information available</string>
 
-    <!-- Error text [CHAR LIMIT = NONE]-->
-    <string name="error">Oops! It seems that an error has occurred. Please check your Internet
-    connection and come back in a while</string>
+    <!-- PLACEHOLDERS -->
+    <!-- Vote average placeholder -->
+    <string name="rating_placeholder" translatable="false">7.9</string>
+    <!-- Year placeholder -->
+    <string name="year_placeholder" translatable="false">2010</string>
+    <!-- Country placeholder -->
+    <string name="country_placeholder" translatable="false">US, CA</string>
+    <!-- Genre placeholder -->
+    <string name="genre_placeholder" translatable="false">Animation, Adventure</string>
+    <!-- Director placeholder -->
+    <string name="director_placeholder" translatable="false">Tim Burton</string>
+    <!-- Cast placeholder -->
+    <string name="cast_placeholder" translatable="false">Angelina Jolie</string>
+    <!-- Author placeholder -->
+    <string name="author_placeholder" translatable="false">cris_84</string>
+    <!-- Review placeholder -->
+    <string name="review_placeholder" translatable="false">Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum.</string>
+
+    <!--Text for sharing [CHAR LIMIT = NONE]-->
+    <string name="shared_text">In love with this movie!
+        \n<xliff.g example="https://www.youtube.com" id="trailer_url">%s</xliff.g>
+         \nThanks to <xliff.g example="Pickamoo" id="app_name">%s</xliff.g></string>
+
+    <!-- Error on insert [CHAR LIMIT = NONE]-->
+    <string name="insert_failed">An error has occurred when saving this movie to favorites</string>
+    <!-- Error on delete [CHAR LIMIT = NONE]-->
+    <string name="delete_failed">An error has occurred when deleting this movie from favorites</string>
+
+    <!-- Fav button wait until loading data text [CHAR LIMIT = NONE]-->
+    <string name="wait">Please wait until data is completely loaded to save the movie to Your
+        Favorites</string>
+
+    <!-- Text to show on detail activity when offline [CHAR LIMIT = NONE]-->
+    <string name="offline">Some information is not available offline</string>
+
+    <!-- Message of the delete confirmation dialog [CHAR LIMIT = NONE]-->
+    <string name="delete_confirmation">Do you want to remove this movie from Your Favorites?</string>
+    <!-- Delete button of the delete confirmation dialog [CHAR LIMIT = NONE]-->
+    <string name="delete">Remove</string>
+    <!-- Cancel button of the delete confirmation dialog [CHAR LIMIT = NONE]-->
+    <string name="cancel">Cancel</string>
 
     <!-- CONTENT DESCRIPTION -->
     <!-- Attribution image content description [CHAR LIMIT = NONE]-->
     <string name="attribution_ct">Powered by The Movie Db</string>
     <!-- Poster image content description [CHAR LIMIT = NONE]-->
     <string name="poster_ct">Movie Poster</string>
+    <!-- Cast images content description [CHAR LIMIT = NONE]-->
+    <string name="cast_ct">Cast photos</string>
+    <!-- Movie photos content description [CHAR LIMIT = NONE]-->
+    <string name="photos_ct">Movie photos</string>
+    <!-- Trailer images content description [CHAR LIMIT = NONE]-->
+    <string name="trailer_ct">Trailer play button</string>
+
+    <!--ACTION BUTTON TITLES-->
+    <string name="action_share">Share</string>
+    <string name="action_favorite">Favorite</string>
 </resources>

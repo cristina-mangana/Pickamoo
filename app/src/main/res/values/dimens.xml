@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="smallSeparation">4dp</dimen>
     <dimen name="smallPadding">8dp</dimen>
     <dimen name="mediumPadding">16dp</dimen>
     <dimen name="bigPadding">20dp</dimen>
+    <dimen name="iconPadding">56dp</dimen>
+    <dimen name="topBarPadding">14dp</dimen>
 
     <dimen name="headSize">20sp</dimen>
+    <dimen name="titleSize">22sp</dimen>
+    <dimen name="bodySize">16sp</dimen>
+    <dimen name="overlineSize">14sp</dimen>
 
-    <dimen name="imageHeight_land">100dp</dimen>
+    <dimen name="nav_drawer_width">240dp</dimen>
+    <dimen name="listImageDimen">72dp</dimen>
 </resources>
